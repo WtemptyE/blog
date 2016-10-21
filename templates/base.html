@@ -28,4 +28,11 @@
 <div class="container">
     {% block page_content %}{% endblock %}
 </div>
+<p>The time is {{ moment(current_time).format('LLL') }}.</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
 {% endblock %}
